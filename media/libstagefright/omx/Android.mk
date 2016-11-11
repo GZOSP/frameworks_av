@@ -60,6 +60,12 @@ ifneq ($(filter msm7x27a msm7x30 msm8660 msm8960,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_CFLAGS += -DQCOM_BSP_LEGACY
 endif
 
+ifneq ($(TARGET_USES_MEDIA_EXTENSIONS),true)
+ifeq ($(TARGET_HAS_LEGACY_CAMERA_HAL1),true)
+LOCAL_CFLAGS += -DCAMCORDER_GRALLOC_SOURCE
+endif
+endif
+
 ifeq ($(call is-vendor-board-platform,QCOM),true)
 ifeq ($(strip $(AUDIO_FEATURE_ENABLED_EXTN_FLAC_DECODER)),true)
 LOCAL_CFLAGS += -DQTI_FLAC_DECODER
