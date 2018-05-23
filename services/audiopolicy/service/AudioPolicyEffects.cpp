@@ -442,7 +442,7 @@ void AudioPolicyEffects::EffectVector::setProcessorEnabled(bool enabled)
 // Audio processing configuration
 // ----------------------------------------------------------------------------
 
-/*static*/ const char * const AudioPolicyEffects::kInputSourceNames[AUDIO_SOURCE_CNT -1] = {
+/*static*/ const char * const AudioPolicyEffects::kInputSourceNames[AUDIO_SOURCE_CNT] = {
     MIC_SRC_TAG,
     VOICE_UL_SRC_TAG,
     VOICE_DL_SRC_TAG,
@@ -450,7 +450,8 @@ void AudioPolicyEffects::EffectVector::setProcessorEnabled(bool enabled)
     CAMCORDER_SRC_TAG,
     VOICE_REC_SRC_TAG,
     VOICE_COMM_SRC_TAG,
-    UNPROCESSED_SRC_TAG
+    UNPROCESSED_SRC_TAG,
+    ""
 };
 
 // returns the audio_source_t enum corresponding to the input source name or
